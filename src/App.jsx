@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
@@ -28,7 +29,6 @@ const Panda = ({ mood = "normal" }) => {
   );
 };
 
-// Animated scene instead of GIF
 const Scene = ({ children }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
@@ -43,93 +43,50 @@ const steps = [
   {
     panda: "shy",
     emoji: "👀",
-    title: "Hey... Himanshi!",
-    msg: "Ye panda bahut der se tumhara wait kar raha hai 🐼\nAur main bhi... par panda zyada cute lagta hai toh usne start kiya 😅",
+    title: "Hey meri cutie 💕",
+    msg: "Sach batao… tum itni cute ho ya main hi zyada dekh leta hoon? 😌\n\nWaise kabse wait kar raha hoon tumhara… thoda jaldi aa jaya karo na 🥺",
     scene: (
       <Scene>
-        <motion.span
-          className="text-4xl"
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          ⏰
-        </motion.span>
-        <motion.span
-          className="text-3xl"
-          animate={{ y: [0, -5, 0] }}
-          transition={{ repeat: Infinity, duration: 1 }}
-        >
-          🐼
-        </motion.span>
+        <span className="text-3xl">🐼</span>
         <span className="text-xs text-gray-400 font-mono">
-          tumhara wait ho raha hai...
+          wait kar raha hu...
         </span>
       </Scene>
     ),
-    btn: "Kya baat hai? 😒",
+    btn: "Kya chahiye tumhe? 😒",
   },
   {
     panda: "cry",
     emoji: "😭",
-    title: "Ek dukh bhari kahani...",
-    msg: "Maine Google pe search kiya:\n'Duniya ki sabse cute ladki' 🔍\n\nResult mein tumhara naam nahi aaya 😤\nToh maine Google ko hi uninstall kar diya.\nUspe trust nahi 😌",
+    title: "Serious sawaal hai 😤",
+    msg: "Tum itni cute kyun ho? 😭\n\nKisi ne permission di thi kya itna adorable hone ki? 😤\n\nAb main kya karu… pura din bas tumhari hi yaad aati rehti hai 💭",
     scene: (
       <Scene>
-        <span className="text-3xl">🔍</span>
-        <motion.span
-          className="text-2xl"
-          animate={{ scale: [1, 1.3, 1] }}
-          transition={{ repeat: Infinity, duration: 0.8 }}
-        >
-          😤
-        </motion.span>
-        <span className="text-xs text-gray-400 font-mono">
-          Google = uninstalled 💀
-        </span>
+        <span className="text-3xl">😤</span>
       </Scene>
     ),
-    btn: "Haha pagal ho 😂",
+    btn: "Drama band karo 😂",
   },
   {
     panda: "normal",
     emoji: "🤔",
-    title: "Ek logical sawaal...",
-    msg: "Agar main tumhe 'Good Morning' bhejta hoon\naur tum reply nahi karti...\n\nToh kya subah hoti hi nahi? 🌅\nScience confirm karo please 😐",
+    title: "Ek confusion hai 🤨",
+    msg: "Agar main tumhe message karu\nAur tum reply na karo…\n\nToh kya main aur zyada miss karne lagta hoon ya already max ho chuka hai? 😶",
     scene: (
       <Scene>
-        <span className="text-3xl">📱</span>
-        <motion.span
-          className="text-2xl"
-          animate={{ opacity: [1, 0.2, 1] }}
-          transition={{ repeat: Infinity, duration: 1.2 }}
-        >
-          💬
-        </motion.span>
-        <span className="text-xs text-gray-400 font-mono">
-          reply... reply... reply... 😐
-        </span>
+        <span className="text-3xl">💬</span>
       </Scene>
     ),
-    btn: "Hoti hai �",
+    btn: "Pagal ho tum 😂",
   },
   {
     panda: "shy",
     emoji: "🍕",
-    title: "Business Proposal 📄",
-    msg: "Main ek startup launch kar raha hoon —\n'Free Pizza For Life' 🍕\n\nInvestor requirement:\nSirf ek haan chahiye... tumse 🥺\n(Valuation: Mera dil 💀)",
+    title: "Ek offer hai 👀",
+    msg: "Main tumhe lifetime free hugs 🤗 + unlimited attention 💕 dene ko ready hoon…\n\nBas ek condition hai —\nTum mujhe thoda sa pyaar de do 🥺",
     scene: (
       <Scene>
-        <motion.span
-          className="text-4xl"
-          animate={{ rotate: [0, -5, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 1 }}
-        >
-          🍕
-        </motion.span>
-        <span className="text-2xl">🤝</span>
-        <span className="text-xs text-gray-400 font-mono">
-          deal of the century 📄
-        </span>
+        <span className="text-3xl">🤗</span>
       </Scene>
     ),
     noBtn: true,
@@ -137,50 +94,23 @@ const steps = [
   {
     panda: "cry",
     emoji: "🌧️",
-    title: "Ek cinematic scene...",
-    msg: "Tum ho. Main hoon. Baarish ho rahi hai. 🌧️\nMain bheeg raha hoon kyunki...\nmaine chhata isliye nahi liya tha\nki tum apna share karo 🥹\n\nPar tum bhi bheeg gayi 💀\nPlan fail. Sorry.",
+    title: "Sach sach batao 🥺",
+    msg: "Agar main tumhare saath baarish mein bheeg raha hoon 🌧️\n\nAur main thoda close aa jaun…\n\nToh tum door jaogi ya… aur paas aaogi? 😳",
     scene: (
       <Scene>
-        <motion.div
-          className="flex gap-3 text-3xl"
-          animate={{ y: [0, 3, 0] }}
-          transition={{ repeat: Infinity, duration: 0.8 }}
-        >
-          <span>🌧️</span>
-          <span>🌧️</span>
-          <span>🌧️</span>
-        </motion.div>
-        <span className="text-3xl">🙍‍♂️</span>
-        <span className="text-xs text-gray-400 font-mono">plan fail 💀</span>
+        <span className="text-3xl">🌧️</span>
       </Scene>
     ),
-    btn: "Idiot ho tum 😂🥺",
+    btn: "Sharam nahi aati 😳😂",
   },
   {
     panda: "love",
     emoji: "💌",
-    title: "Himanshi... sun na 🥺",
-    msg: "Ye panda roz raat ko ek star dekhta hai\naur sochta hai — kaash Sanjya bhi dekh rahi hoti 🌟\n\nTum meri life ki wo notification ho\njise main kabhi dismiss nahi karna chahta 🔔\n\nKya tum meri girlfriend banogi? 💍",
+    title: "Last question… dil se 💖",
+    msg: "Itne saare sawaal ke baad…\nEk final sawaal hai 🥺\n\nKya tum meri banogi?\n\nMatlab officially… meri wali ❤️",
     scene: (
       <Scene>
-        <motion.span
-          className="text-4xl"
-          animate={{ scale: [1, 1.3, 1], rotate: [0, 10, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.2 }}
-        >
-          💍
-        </motion.span>
-        <span className="text-3xl">🐼</span>
-        <motion.span
-          className="text-2xl"
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          💕
-        </motion.span>
-        <span className="text-xs text-gray-400 font-mono">
-          panda propose kar raha hai 🥺
-        </span>
+        <span className="text-3xl">💍</span>
       </Scene>
     ),
     finalStep: true,
@@ -220,123 +150,62 @@ export default function ProposalPage() {
   const current = steps[step];
 
   return (
-    <div className="relative flex items-start justify-center min-h-screen w-full bg-gradient-to-br from-pink-100 via-rose-200 to-red-100 text-center px-3 py-6 overflow-y-auto overflow-x-hidden">
+    <div className="relative flex items-center justify-center min-h-screen w-full bg-gradient-to-br from-pink-100 via-rose-200 to-red-100 text-center px-3 py-6">
       {yesClicked && <Confetti numberOfPieces={500} recycle={true} />}
 
       <AnimatePresence mode="wait">
         {!yesClicked ? (
           <motion.div
             key={step}
-            initial={{ opacity: 0, y: 60, scale: 0.85 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -60, scale: 0.85 }}
-            transition={{ type: "spring", stiffness: 220, damping: 22 }}
-            className="w-full max-w-sm bg-white/75 backdrop-blur-md rounded-3xl shadow-2xl p-4 sm:p-8"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -60 }}
+            className="w-full max-w-sm bg-white/80 rounded-3xl shadow-xl p-6"
           >
             <Panda mood={current.panda} />
             {current.scene}
-            <div className="text-4xl mb-2">{current.emoji}</div>
-            <h1 className="text-xl sm:text-2xl font-bold text-pink-600 mb-3">
+            <div className="text-3xl mb-2">{current.emoji}</div>
+            <h1 className="text-xl font-bold text-pink-600 mb-3">
               {current.title}
             </h1>
-            <p className="text-sm sm:text-base text-gray-700 mb-5 whitespace-pre-line leading-relaxed">
+            <p className="text-gray-700 mb-5 whitespace-pre-line">
               {current.msg}
             </p>
 
-            <div className="flex justify-center gap-2 mb-5">
-              {steps.map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-2 rounded-full transition-all duration-300 ${i === step ? "bg-pink-500 w-4" : "bg-pink-200 w-2"}`}
-                />
-              ))}
-            </div>
-
             {current.finalStep || current.noBtn ? (
-              <div className="flex flex-wrap justify-center gap-3 relative overflow-visible pb-24">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
+              <div className="flex gap-3 justify-center relative">
+                <button
                   onClick={current.finalStep ? () => setYesClicked(true) : next}
-                  className="bg-gradient-to-r from-pink-500 to-red-400 text-white px-8 py-3 rounded-2xl text-base font-semibold shadow-lg hover:scale-110 transition"
+                  className="bg-pink-500 text-white px-6 py-2 rounded-xl"
                 >
-                  {current.finalStep ? "Haan ji 💖" : "Bilkul! 🍕😍"}
-                </motion.button>
+                  {current.finalStep ? "Haan 💖" : "Yes 😍"}
+                </button>
+
                 <motion.button
                   onMouseEnter={moveNoButton}
-                  onTouchStart={moveNoButton}
                   animate={{ x: noPosition.x, y: noPosition.y }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="bg-gray-400 text-white px-6 py-3 rounded-2xl text-base font-semibold shadow"
+                  className="bg-gray-400 text-white px-4 py-2 rounded-xl"
                 >
                   {noLabel}
                 </motion.button>
               </div>
             ) : (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={next}
-                className="bg-gradient-to-r from-pink-500 to-rose-400 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg hover:scale-110 transition"
+                className="bg-pink-500 text-white px-6 py-2 rounded-xl"
               >
                 {current.btn}
-              </motion.button>
+              </button>
             )}
           </motion.div>
         ) : (
-          <motion.div
-            key="final"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 150, damping: 12 }}
-            className="w-full max-w-sm bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-4 sm:p-10"
-          >
+          <div className="text-center bg-white p-8 rounded-3xl shadow-xl">
             <Panda mood="dance" />
-
-            {/* Dance scene */}
-            <motion.div className="mx-auto mb-4 rounded-2xl bg-gradient-to-br from-pink-50 to-rose-100 border border-pink-200 py-4 flex justify-center gap-3 text-4xl">
-              <motion.span
-                animate={{ y: [0, -10, 0], rotate: [0, -15, 15, 0] }}
-                transition={{ repeat: Infinity, duration: 0.6 }}
-              >
-                🐼
-              </motion.span>
-              <motion.span
-                animate={{ scale: [1, 1.4, 1] }}
-                transition={{ repeat: Infinity, duration: 0.8 }}
-              >
-                ❤️
-              </motion.span>
-              <motion.span
-                animate={{ y: [0, -10, 0], rotate: [0, 15, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 0.6, delay: 0.3 }}
-              >
-                🐼
-              </motion.span>
-            </motion.div>
-
-            <motion.div
-              animate={{ scale: [1, 1.25, 1] }}
-              transition={{ repeat: Infinity, duration: 1 }}
-              className="text-5xl my-3"
-            >
-              ❤️
-            </motion.div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-pink-600 mb-3">
-              I Love You, Himanshi 💕
-            </h1>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Main jaanta tha tum haan bologe 😎
-              <br />
-              Ye panda bhi khush hai — dekho naach raha hai 🐼💃
-              <br />
-              <br />
-              Tum meri sabse pyaari notification ho,
-              <br />
-              aur main tumhe kabhi mute nahi karunga 🔔💖
+            <h1 className="text-3xl font-bold text-pink-600">I Love You 💕</h1>
+            <p className="mt-3 text-gray-700">
+              Mujhe pata tha tum haan bologi 😎❤️
             </p>
-            <p className="mt-5 text-pink-500 font-semibold text-base">
-              Officially tumhara (aur is panda ka bhi) 😘🐼
-            </p>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </div>
